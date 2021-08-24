@@ -3,10 +3,17 @@
 // const fetch = require('node-fetch');
 // Função que faz a requisição para a API 
 const fetchQuiz = async (category, difficulty, limit) => {
+  const url = 'https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH';
+  let endpoint = url;
+  if (category) endpoint += `&category=${category}`;
+  if (difficulty) endpoint += `&difficulty=${difficulty}`;
+  if (limit) endpoint += `&limit=${limit}`;
   // faz a reuisição da API com os parametros
-  const getQuestions = await fetch(`https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH&category=${category}difficulty=${difficulty}&limit=${limit}`);
+  const getQuestions = await fetch(endpoint);
+  // const getQuestions = await fetch(`https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH&category=${category}&difficulty=${difficulty}&limit=${limit}`);
   // trata os dados convertendo em ObjectJson
   const responseQuestions = await getQuestions.json();
+  return responseQuestions;
 };
 
 
@@ -37,22 +44,8 @@ const appendQuestions = (container, questions) => {
   })
 }
 
-window.onload = () => {
-  // Chamada de teste
-  appendQuestions( document.querySelector('#question-container'), [
-    {
-      question: 'hey?',
-      answers: {
-        a: 'hey',
-        b: 'hello',
-        c: null
-      },
-      correct_answers: {
-        a: 'true',
-        b: 'false',
-        c: 'false'
-      } 
-    }
-  ]);
+window.onload = async () => {
+  const questions = await fetchQuiz();
+  appendQuestions(document.querySelector('#question-container'), questions);
 }
 
