@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.header-title {
+  color: white;
+  align-self: center;
+}
+
