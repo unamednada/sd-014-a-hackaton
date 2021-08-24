@@ -7,5 +7,3 @@ const fetchQuiz = async (category, difficulty, limit) => {
   // trata os dados convertendo em ObjectJson
   const responseQuestions = await getQuestions.json();
 };
-
-console.log(fetchQuiz());
