@@ -16,9 +16,31 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   questionDiv.className = "question-div";
   // Console.log de teste
   console.log(questionDiv);
+
+  return questionDiv;
+}
+
+const appendQuestions = (container, questions) => {
+  questions.forEach((questionObj) => {
+    container.appendChild(createQuestionItem(questionObj));
+  })
 }
 
 window.onload = () => {
   // Chamada de teste
-  createQuestionItem({ question: 'hey?', answers: { a: 'hey', b: 'hello', c: null }, correct_answers: { a: 'true', b: 'false', c: 'false'} });
+  appendQuestions( document.querySelector('#question-container'), [
+    {
+      question: 'hey?',
+      answers: {
+        a: 'hey',
+        b: 'hello',
+        c: null
+      },
+      correct_answers: {
+        a: 'true',
+        b: 'false',
+        c: 'false'
+      } 
+    }
+  ]);
 }
