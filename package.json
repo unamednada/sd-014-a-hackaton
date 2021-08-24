@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/unamednada/sd-014-a-hackaton/issues"
   },
-  "homepage": "https://github.com/unamednada/sd-014-a-hackaton#readme"
+  "homepage": "https://github.com/unamednada/sd-014-a-hackaton#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }
