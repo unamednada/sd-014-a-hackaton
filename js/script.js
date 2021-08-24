@@ -1,6 +1,6 @@
 // Make the function fetch 
 
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 // Função que faz a requisição para a API 
 const fetchQuiz = async (category, difficulty, limit) => {
   // faz a reuisição da API com os parametros
