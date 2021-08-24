@@ -1,4 +1,4 @@
-# sd-014-a-hackaton
+# Tryvia
 
 Este é o repositório de Gustavo Dias, Flávio Pires e Ilan Aragão.
 
