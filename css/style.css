@@ -1,3 +1,11 @@
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   background-color: gray;
@@ -13,3 +21,12 @@
   align-self: center;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.github-div {
+  text-align: center;
+  margin-bottom: 10px;
+}
