@@ -37,4 +37,30 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 
 ## Checklist
 
+[]. Criar o index.html estático:
+	[] ) header com logo e título;
+	[] ) main com descrição e input para nome, 
+	[] ) footer com about-us: linkedin e github do grupo;
+[]. Criar o estilo para o index.html:
+	[] ) Utilizar bootstrap ou outro framework;
+	[] ) Utilizar o coolors.co ou outro site para paleta de cores;
+	[] ) Desktop only;
+[]. Criar o quiz.html dinâmico:
+	[] ) header com logo e título – igual ao index.html;
+	[] ) subtitulo de saudação, instruções, selectors de tema e dificuldade, botão de submit;
+	[] ) container de perguntas com contador de perguntas e percentagem de conclusão – obs pesquisar barra de progresso DOM;
+	[] ) footer igual ao index.html;
+[]. Criar o estilo para o quiz.html:
+	[] ) Mesmas regras para o index.html;
+[]. Criar funções assíncronas básicas:
+	[] ) fetchQuiz(params) – responsável por retornar o quiz já filtrado;
+	[] ) createQuestionItem – responsável por criar uma div para a questão dentro do container de perguntas;
+	[] ) appendQuestions – responsável por acrescentar 
+	[] ) nextQuestion – responsável por trocar o display da pergunta atual;
+	[] ) countAnswers – responsável por verificar a resposta e acrescentar ao contador;
+	[] ) generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
+	[] ) renderResult – responsável por criar elemento DOM resultado contendo nome, mensagem e total de acertos e botão de refazer o teste;
+[]. Criar testes para as funções:
+	a ) ...
+
 ### MERGE INTO PRODUCTION, NEVER MAIN 
