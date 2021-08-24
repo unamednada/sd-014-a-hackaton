@@ -34,3 +34,6 @@ Código
 ## Nosso projeto
 
 Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página interativa com quizzes sobre tecnologia.
+
+## Checklist
+
