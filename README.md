@@ -37,3 +37,4 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 
 ## Checklist
 
+### MERGE INTO PRODUCTION, NEVER MAIN 
