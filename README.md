@@ -38,7 +38,7 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 ## Checklist
 
 ### 1 Criar o index.html estático:
-	- [ ]. header com logo e título;
+	- [:check:]. header com logo e título;
 	- [ ]. main com descrição e input para nome, 
 	- [ ]. footer com about-us: linkedin e github do grupo;
 ### 2 Criar o estilo para o index.html:
