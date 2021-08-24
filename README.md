@@ -26,10 +26,10 @@ Utilizar uma API que usa APIKey para acesso
 
 ## Critérios de avaliação
 
-Criatividade
-Inovação
-Aplicabilidade
-Código
+- Criatividade
+- Inovação
+- Aplicabilidade
+- Código
 
 ## Nosso projeto
 
