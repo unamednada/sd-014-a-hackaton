@@ -2,12 +2,12 @@
 
 // const fetch = require('node-fetch');
 // Função que faz a requisição para a API 
-const fetchQuiz = async (category, difficulty, limit) => {
+const fetchQuiz = async (params) => {
   const url = 'https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH';
   let endpoint = url;
-  if (category) endpoint += `&category=${category}`;
-  if (difficulty) endpoint += `&difficulty=${difficulty}`;
-  if (limit) endpoint += `&limit=${limit}`;
+  if (params.category) endpoint += `&category=${params.category}`;
+  if (params.difficulty) endpoint += `&difficulty=${params.difficulty}`;
+  if (params.limit) endpoint += `&limit=${params.limit}`;
   // faz a reuisição da API com os parametros
   const getQuestions = await fetch(endpoint);
   // const getQuestions = await fetch(`https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH&category=${category}&difficulty=${difficulty}&limit=${limit}`);
@@ -45,7 +45,11 @@ const appendQuestions = (container, questions) => {
 }
 
 window.onload = async () => {
-  const questions = await fetchQuiz();
+  const params = {
+    category: 'sql',
+    limit: '10'
+  }
+  const questions = await fetchQuiz(params);
   appendQuestions(document.querySelector('#question-container'), questions);
 }
 
