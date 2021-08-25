@@ -42,9 +42,9 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. main com descrição e input para nome; 
 	- [X]. footer com about-us: linkedin e github do grupo;
 ### 2 Criar o estilo para o index.html:
-	- [I]. Utilizar bootstrap ou outro framework;
-	- [I]. Utilizar o coolors.co ou outro site para paleta de cores;
-	- [I]. Desktop only;
+	- [x]. Utilizar bootstrap ou outro framework;
+	- [x]. Utilizar o coolors.co ou outro site para paleta de cores;
+	- [x]. Desktop only;
 ### 3 Criar o quiz.html dinâmico:
 	- [X]. header com logo e título – igual ao index.html;
 	- [X]. subtitulo de saudação, instruções, selectors de tema e dificuldade, botão de submit;
@@ -57,7 +57,7 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. createQuestionItem – responsável por criar uma div para a questão dentro do container de perguntas;
 	- [X]. appendQuestions – responsável por acrescentar;
 	- [X]. integrar funções fetchQuiz e appendQuestions para renderizar perguntas na tela;
-	- [G-F]. nextQuestion – responsável por trocar o display da pergunta atual;
+	- [X]. nextQuestion – responsável por trocar o display da pergunta atual;
 	- [ ]. countAnswers – responsável por verificar a resposta e acrescentar ao contador;
 	- [ ]. generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
 	- [ ]. renderResult – responsável por criar elemento DOM resultado contendo nome, mensagem e total de acertos e botão de refazer o teste;
