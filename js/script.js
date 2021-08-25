@@ -1,6 +1,6 @@
 // Make the function fetch 
 
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
@@ -54,6 +54,7 @@ const appendQuestions = (container, questions) => {
 const createQuiz = async () => {
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
   const params = {
+    category: 'sql',
     limit: '10'
   }
   try {
@@ -65,10 +66,10 @@ const createQuiz = async () => {
 }
 
 // Linhas comentadas para não dar erro no node
-// window.onload = async () => {
-//   await createQuiz();
-// }
-
-module.exports = {
-  fetchQuiz
+window.onload = async () => {
+  await createQuiz();
 }
+
+// module.exports = {
+//   fetchQuiz
+// }
