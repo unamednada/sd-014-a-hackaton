@@ -60,7 +60,7 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. nextQuestion – responsável por trocar o display da pergunta atual;
 	- [G]. countAnswers – responsável por verificar a resposta e acrescentar ao contador;
 	- [ ]. generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
-	- [ ]. renderResult – responsável por criar elemento DOM resultado contendo nome, mensagem e total de acertos e botão de refazer o teste;
+	- [ ]. renderResult – responsável por criar elemento DOM resultado * usando modal * contendo nome, mensagem e total de acertos e botão de refazer o teste;
 ### 6 Criar testes para as funções:
 	- [X]. Testar fetchQuiz;
 ### 7 Criar logo, escolher estilo geral do site:
