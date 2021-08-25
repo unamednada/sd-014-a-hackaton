@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/unamednada/sd-014-a-hackaton#readme",
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "node-fetch": "^2.6.1"
   }
 }
