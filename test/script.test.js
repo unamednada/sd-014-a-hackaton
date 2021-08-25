@@ -36,6 +36,11 @@ describe ('Testa se a função fetchQuiz', () => {
   })
 
   it('retorna um array ao ser chamada com parâmetros válidos', async () => {
+    expect.assertions(5);
     await expect(script.fetchQuiz({ category: 'linux' })).resolves.toEqual(mockReturn);
+    await expect(script.fetchQuiz({ category: 'linux', difficulty: 'hard' })).resolves.toEqual(mockReturn);
+    await expect(script.fetchQuiz({ difficulty: 'easy', limit: '10' })).resolves.toEqual(mockReturn);
+    expect(fetch).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledTimes(4);
   })
 });
