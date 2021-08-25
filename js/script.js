@@ -3,9 +3,11 @@ const nextBtn = document.querySelector('#btn-next');
 
 // Make the function fetch 
 
+
 // const fetch = require('node-fetch');
 
 // const confirmFilter = document.querySelector('#create-quiz');
+
 
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
@@ -80,6 +82,7 @@ const nextQuestion = () => {
 
 // Linhas comentadas para não dar erro no node
 
+
 window.onload = async () => {
   await createQuiz();
   questionContainer.firstElementChild.classList.toggle('show');
@@ -90,3 +93,4 @@ window.onload = async () => {
 // module.exports = {
 //   fetchQuiz
 // }
+
