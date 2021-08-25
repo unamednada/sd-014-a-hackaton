@@ -8,28 +8,62 @@ a {
   font-size: 16px;
 }
 
-footer{
-  margin: 10px
+footer {
+  margin: 10px;
+}
+
+h1 {
+  font-family: 'Lobster', sans-serif;
+}
+
+h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  margin: 30px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form {
+  margin: 30px;
+}
+
+form select {
+  margin-bottom: 20px;
+}
+
+#question-container {
+  margin: 30px;
+}
+
+.btn-form {
+  margin: 0px 0px 30px 30px;
+}
+
+.label {
+  margin-bottom: 20px;
+}
+
+.btn{
+  background-color: #274472;
 }
 
 .hr1 {
-  width: 400px;
+  width: 70%;
+  color: black;
+  margin: auto;
+}
+.hr2 {
+  width: 35%;
   color: black;
   margin: auto;
 }
 
-.header {
-  display: flex;
-  background-color: gray;
-  justify-content: space-between;
-}
-
-.header-logo {
-  width: 100px;
-}
-
 .header-title {
-  color: white;
+  color: #FFFFFF;
   align-self: center;
 }
 
@@ -83,4 +117,9 @@ footer{
 .github-div {
   text-align: center;
   margin-bottom: 10px;
+}
+
+.paragrafo-footer {
+  text-align: center;
+  font-size: 18px;
 }
