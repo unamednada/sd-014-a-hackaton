@@ -29,6 +29,7 @@ describe ('Testa se a função fetchQuiz', () => {
   }));
 
   it('retorna um array ao ser chamada sem parâmetros', async () => {
+    expect.assertions(1);
     await expect(script.fetchQuiz()).resolves.toEqual(mockReturn);
   })
 });

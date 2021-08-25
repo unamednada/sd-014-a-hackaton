@@ -64,6 +64,7 @@ const createQuiz = async () => {
   }
 }
 
+// Linhas comentadas para não dar erro no node
 // window.onload = async () => {
 //   await createQuiz();
 // }
