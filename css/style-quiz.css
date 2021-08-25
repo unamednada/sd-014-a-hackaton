@@ -1,0 +1,44 @@
+p {
+  margin-top: 0.5em;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer{
+  margin: 10px
+}
+
+.hr1 {
+  width: 400px;
+  color: black;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.header-title {
+  color: white;
+  align-self: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.github-div {
+  text-align: center;
+  margin-bottom: 10px;
+}
