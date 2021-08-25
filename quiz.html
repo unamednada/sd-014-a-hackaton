@@ -29,9 +29,20 @@
         id="select"
       >
         <option selected>Selecione a dificuldade</option>
-        <option value="Easy">Muito pouco</option>
-        <option value="Medium">Pouco</option>
-        <option value="Hard">Bastante</option>
+        <option value="difficulty=easy">Muito pouco</option>
+        <option value="difficulty=medium">Pouco</option>
+        <option value="difficulty=hard">Bastante</option>
+      </select>
+      <label for="select">Quantas perguntas gostaria de responder?</label>
+      <select
+        class="form-select form-select-sm"
+        aria-label=".form-select-sm example"
+        id="select"
+      >
+        <option selected>Selecione a quantidade</option>
+        <option value="limit=5">5</option>
+        <option value="limit=10">10</option>
+        <option value="limit=15">15</option>
       </select>
       <label for="">Aqui vai o label para os checks:</label>
       <div class="mb-3 form-check">
