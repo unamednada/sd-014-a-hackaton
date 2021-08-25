@@ -8,6 +8,16 @@ a {
   font-size: 16px;
 }
 
+footer{
+  margin: 10px
+}
+
+.hr1 {
+  width: 400px;
+  color: black;
+  margin: auto;
+}
+
 .header {
   display: flex;
   background-color: gray;
