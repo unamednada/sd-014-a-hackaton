@@ -11,10 +11,13 @@ const fetchQuiz = async (params) => {
   if (params.difficulty) endpoint += `&difficulty=${params.difficulty}`;
   if (params.limit) endpoint += `&limit=${params.limit}`;
   // faz a reuisição da API
-  const getQuestions = await fetch(endpoint);
-  // trata os dados convertendo em ObjectJson
-  const responseQuestions = await getQuestions.json();
-  return responseQuestions;
+  try {
+    const getQuestions = await fetch(endpoint);
+    const responseQuestions = await getQuestions.json();
+    return responseQuestions;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Create createQuestionItem
@@ -28,8 +31,11 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   // Itera por todas as respostas válidas e verifica se é a correta para então acrescentar o elemeto à questionDiv
   validAnswers.forEach((answer, index) => {
     // Problemas quando as respostas são tags HTML - Modificar forma de acrescentar li à questionDiv !!!
-    if (Object.values(correct_answers)[index] === 'true') questionDiv.innerHTML += `<li class="correct answer">${answer}</li>`;
-    else questionDiv.innerHTML += `<li class="answer">${answer}</li>`
+    const currentAnswer = document.createElement('li');
+    currentAnswer.innerText = answer;
+    currentAnswer.classList.add('answer');
+    if (Object.values(correct_answers)[index] === 'true') currentAnswer.classList.add('correct');
+    questionDiv.appendChild(currentAnswer);
   });
   questionDiv.className = "question-div";
   // Console.log de teste
@@ -51,12 +57,16 @@ const appendQuestions = (container, questions) => {
 const CreateQuiz = async () => {
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
   const params = {
-    category: 'sql',
+    category: 'js',
     limit: '10'
   }
-
-  const questions = await fetchQuiz(params);
-  appendQuestions(document.querySelector('#question-container'), questions);
+  try {
+    const questions = await fetchQuiz(params);
+    appendQuestions(document.querySelector('#question-container'), questions);
+  } catch (error) {
+    console.log(error);
+  }
+  
 }
 
 window.onload = async () => {
