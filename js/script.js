@@ -1,13 +1,19 @@
 const questionContainer = document.querySelector('#question-container');
 const nextBtn = document.querySelector('#btn-next');
+const filterBtn = document.querySelector('#filter-btn');
+
+const getParams = () => {
+  const category = document.querySelector('[name="select-category"]:checked').value;
+  const difficulty = document.querySelector('#select-difficulty').value;
+  const limit = document.querySelector('#select-limit').value;
+  return { category, difficulty, limit };
+}
 
 // Make the function fetch 
-
 
 // const fetch = require('node-fetch');
 
 // const confirmFilter = document.querySelector('#create-quiz');
-
 
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
@@ -60,11 +66,8 @@ const appendQuestions = (container, questions) => {
 
 const createQuiz = async () => {
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
-  const params = {
-    difficulty: 'easy',
-    category: 'linux',
-    limit: '10'
-  }
+  const params = getParams();
+
   try {
     const questions = await fetchQuiz(params);
     appendQuestions(questionContainer, questions);
@@ -82,15 +85,15 @@ const nextQuestion = () => {
 
 // Linhas comentadas para não dar erro no node
 
-
 window.onload = async () => {
-  await createQuiz();
-  questionContainer.firstElementChild.classList.toggle('show');
-
+  filterBtn.addEventListener('click', async () => {
+    await createQuiz();
+    questionContainer.firstElementChild.classList.toggle('show');
+  })
+  
   nextBtn.addEventListener('click', nextQuestion);
 }
 
 // module.exports = {
 //   fetchQuiz
 // }
-
