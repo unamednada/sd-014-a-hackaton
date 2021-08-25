@@ -1,6 +1,6 @@
 // Make the function fetch 
 
-const fetch = require('node-fetch');
+/* const fetch = require('node-fetch'); */
 
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
@@ -65,10 +65,10 @@ const createQuiz = async () => {
 }
 
 // Linhas comentadas para não dar erro no node
-// window.onload = async () => {
-//   await createQuiz();
-// }
+window.onload = async () => {
+   await createQuiz();
+};
 
-module.exports = {
+/* module.exports = {
   fetchQuiz
-}
+} */
