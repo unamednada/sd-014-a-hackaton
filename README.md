@@ -42,31 +42,31 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. main com descrição e input para nome; 
 	- [X]. footer com about-us: linkedin e github do grupo;
 ### 2 Criar o estilo para o index.html:
-	- [ ]. Utilizar bootstrap ou outro framework;
-	- [ ]. Utilizar o coolors.co ou outro site para paleta de cores;
-	- [ ]. Desktop only;
+	- [I]. Utilizar bootstrap ou outro framework;
+	- [I]. Utilizar o coolors.co ou outro site para paleta de cores;
+	- [I]. Desktop only;
 ### 3 Criar o quiz.html dinâmico:
 	- [X]. header com logo e título – igual ao index.html;
 	- [X]. subtitulo de saudação, instruções, selectors de tema e dificuldade, botão de submit;
-	- [G]. container de perguntas com contador de perguntas e percentagem de conclusão – obs pesquisar barra de progresso DOM;
+	- [G-F]. container de perguntas com contador de perguntas e percentagem de conclusão – obs pesquisar barra de progresso DOM;
 	- [X]. footer igual ao index.html;
 ### 4 Criar o estilo para o quiz.html:
-	- [ ]. Mesmas regras para o index.html;
+	- [G-F]. Mesmas regras para o index.html;
 ### 5 Criar funções assíncronas básicas:
 	- [X]. fetchQuiz(params) – responsável por retornar o quiz já filtrado;
 	- [X]. createQuestionItem – responsável por criar uma div para a questão dentro do container de perguntas;
 	- [X]. appendQuestions – responsável por acrescentar;
 	- [X]. integrar funções fetchQuiz e appendQuestions para renderizar perguntas na tela;
-	- [ ]. nextQuestion – responsável por trocar o display da pergunta atual;
+	- [G-F]. nextQuestion – responsável por trocar o display da pergunta atual;
 	- [ ]. countAnswers – responsável por verificar a resposta e acrescentar ao contador;
 	- [ ]. generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
 	- [ ]. renderResult – responsável por criar elemento DOM resultado contendo nome, mensagem e total de acertos e botão de refazer o teste;
 ### 6 Criar testes para as funções:
 	- [X]. Testar fetchQuiz;
-	- [G]. Testar appendQuestions;
+	- [ ]. Testar appendQuestions;
 ### 7 Criar logo, escolher estilo geral do site:
-	- [F]. Criar logo;
-	- [F]. Escolher fonte;
-	- [F]. Paleta de cores;
+	- [X]. Criar logo;
+	- [X]. Escolher fonte;
+	- [X]. Paleta de cores;
 
 ### MERGE INTO PRODUCTION, NEVER MAIN 
