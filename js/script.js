@@ -1,6 +1,11 @@
+const questionContainer = document.querySelector('#question-container');
+const nextBtn = document.querySelector('#btn-next');
+
 // Make the function fetch 
 
 // const fetch = require('node-fetch');
+
+// const confirmFilter = document.querySelector('#create-quiz');
 
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
@@ -54,20 +59,32 @@ const appendQuestions = (container, questions) => {
 const createQuiz = async () => {
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
   const params = {
-    category: 'sql',
+    difficulty: 'easy',
+    category: 'linux',
     limit: '10'
   }
   try {
     const questions = await fetchQuiz(params);
-    appendQuestions(document.querySelector('#question-container'), questions);
+    appendQuestions(questionContainer, questions);
   } catch (error) {
     console.log(error);
   }
 }
 
+const nextQuestion = () => {
+  const currentHidden = document.querySelector('.show');
+  currentHidden.classList.toggle('show');
+  if (currentHidden.nextElementSibling) currentHidden.nextElementSibling.classList.toggle('show');
+  else window.alert('FIM DE JOGO!');
+}
+
 // Linhas comentadas para não dar erro no node
+
 window.onload = async () => {
   await createQuiz();
+  questionContainer.firstElementChild.classList.toggle('show');
+
+  nextBtn.addEventListener('click', nextQuestion);
 }
 
 // module.exports = {
