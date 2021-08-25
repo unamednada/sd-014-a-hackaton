@@ -79,10 +79,6 @@ const nextQuestion = () => {
 }
 
 // Linhas comentadas para não dar erro no node
-<<<<<<< HEAD
-=======
-
->>>>>>> 700c0fa942ce62938ab839e9f0196d31aa1f7e02
 
 window.onload = async () => {
   await createQuiz();
@@ -94,7 +90,3 @@ window.onload = async () => {
 // module.exports = {
 //   fetchQuiz
 // }
-<<<<<<< HEAD
-=======
-
->>>>>>> 700c0fa942ce62938ab839e9f0196d31aa1f7e02
