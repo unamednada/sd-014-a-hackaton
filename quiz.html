@@ -27,7 +27,7 @@
       <select
         class="form-select form-select-sm"
         aria-label=".form-select-sm example"
-        id="select"
+        id="select-difficulty"
       >
         <option selected>Selecione a dificuldade</option>
         <option value="easy">Muito pouco</option>
@@ -38,7 +38,7 @@
       <select
         class="form-select form-select-sm"
         aria-label=".form-select-sm example"
-        id="select"
+        id="select-limit"
       >
         <option selected>Selecione a quantidade</option>
         <option value="5">5</option>
@@ -48,36 +48,36 @@
       <label class="label">Quais assuntos gostaria de testar seus conhecimentos?</label>
       <div class="form-check form-check-inline">
         <label for="inlineRadio1">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Linux">
+          <input class="form-check-input" type="radio" name="select-category" id="inlineRadio1" value="Linux">
           Linux
         </label>
       </div>
       <div class="form-check form-check-inline">
         <label for="inlineRadio2">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Networking">
+          <input class="form-check-input" type="radio" name="select-category" id="inlineRadio2" value="networking">
           Networking
         </label>
       </div>
       <div class="form-check form-check-inline">
         <label for="inlineRadio3">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Programming">
+          <input class="form-check-input" type="radio" name="select-category" id="inlineRadio3" value="programming">
           Programming
         </label>
       </div>
       <div class="form-check form-check-inline">
         <label for="inlineRadio4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Cloud">
+          <input class="form-check-input" type="radio" name="select-category" id="inlineRadio4" value="cloud">
           Cloud
         </label>
       </div>
       <div class="form-check form-check-inline">
         <label for="inlineRadio5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="DevOps">
+          <input class="form-check-input" type="radio" name="select-category" id="inlineRadio5" value="devOps">
           DevOps
         </label>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button id="filter-btn" type="button" class="btn btn-primary">Filtrar</button>
       </div>
     </form>
     <button type="button" class="btn btn-primary btn-form">Random</button>
