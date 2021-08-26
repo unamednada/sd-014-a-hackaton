@@ -106,8 +106,10 @@ const nextQuestion = () => {
 
 const countAnswers = (event) => {
   const selected = event.target;
-  if (Array.from(selected.classList).includes('correct')) correct += 1;
-  nextQuestion();
+  if (Array.from(selected.classList).includes('answer')) {
+    if (Array.from(selected.classList).includes('correct')) correct += 1;
+    nextQuestion();
+  }
 }
 
 const showPlayer = (name) => {
