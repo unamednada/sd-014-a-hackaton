@@ -3,10 +3,17 @@ const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
 
 const getParams = () => {
-  const category = document.querySelector('[name="select-category"]:checked').value;
-  const difficulty = document.querySelector('#select-difficulty').value;
-  const limit = document.querySelector('#select-limit').value;
-  return { category, difficulty, limit };
+  let params = {};
+  if (document.querySelector('[name="select-category"]:checked')) {
+    params['category'] = document.querySelector('[name="select-category"]:checked').value;
+  }
+  if (document.querySelector('#select-difficulty').value !== "null") {
+    params['difficulty'] = document.querySelector('#select-difficulty').value;
+  }
+  if (document.querySelector('#select-limit').value !== "null") {
+    params['limit'] = document.querySelector('#select-limit').value;
+  }
+  return params;
 }
 
 // Make the function fetch 
@@ -87,9 +94,12 @@ const nextQuestion = () => {
 
 window.onload = async () => {
   filterBtn.addEventListener('click', async () => {
+    questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
   })
+  
+
   
   nextBtn.addEventListener('click', nextQuestion);
 }

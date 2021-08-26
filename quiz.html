@@ -35,7 +35,7 @@
         </h3>
         <h4>
           Para ter acesso ao quiz, selecione os filtros a seguir e clique em
-          'Filtrar' ou clique em 'Random' para gerar automaticamente.
+          'Iniciar' ou clique em 'Random' para gerar automaticamente.
         </h4>
       </section>
       <hr class="hr1" />
@@ -46,17 +46,17 @@
             aria-label=".form-select-sm example"
             id="select-difficulty"
           >
-            <option selected>Selecione a dificuldade</option>
-            <option value="easy">Muito pouco</option>
-            <option value="medium">Pouco</option>
-            <option value="hard">Bastante</option>
+            <option value="null" selected>Selecione a dificuldade</option>
+            <option value="easy">Fácil</option>
+            <option value="medium">Padrão</option>
+            <option value="hard">Difícil</option>
           </select>
           <select
             class="form-select form-select-sm filter"
             aria-label=".form-select-sm example"
             id="select-limit"
           >
-            <option selected>Quantidade de perguntas</option>
+            <option value="null" selected>Quantidade de perguntas</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
@@ -113,7 +113,7 @@
             type="button"
             class="btn btn-primary btn-form"
           >
-            Filtrar
+            Iniciar
           </button>
           <button type="button" class="btn btn-primary btn-form">Random</button>
         </section>
