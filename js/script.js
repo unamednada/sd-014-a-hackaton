@@ -3,6 +3,8 @@ const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
 const randomBtn = document.querySelector('#random-btn');
 
+let correct = 0;
+
 const getParams = () => {
   let params = {};
   if (document.querySelector('[name="select-category"]:checked')) {
@@ -58,7 +60,7 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
     questionDiv.appendChild(currentAnswer);
   });
   questionDiv.className = "question-div";
-
+  questionDiv.addEventListener('click', countAnswers);
   return questionDiv;
 }
 
@@ -98,6 +100,13 @@ const nextQuestion = () => {
   currentHidden.classList.toggle('show');
   if (currentHidden.nextElementSibling) currentHidden.nextElementSibling.classList.toggle('show');
   else window.alert('FIM DE JOGO!');
+  console.log(`Correct answers: ${correct}`);
+}
+
+const countAnswers = (event) => {
+  const selected = event.target;
+  if (Array.from(selected.classList).includes('correct')) correct += 1;
+  nextQuestion();
 }
 
 // Linhas comentadas para não dar erro no node
@@ -107,15 +116,16 @@ window.onload = async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
+    correct = 0;
   })
 
   randomBtn.addEventListener('click', async () => {
     questionContainer.innerHTML = '';
     await randomQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
+    correct = 0;
   })
   
-  nextBtn.addEventListener('click', nextQuestion);
 }
 
 // module.exports = {
