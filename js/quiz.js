@@ -4,6 +4,8 @@ const randomBtn = document.querySelector('#random-btn');
 const player = localStorage.getItem('player');
   
 let correct = 0;
+let quizLength = 10;
+let progressValue = 1;
 
 const getParams = () => {
   let params = {};
@@ -50,6 +52,9 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   // Somente aceita respostas válidas
   const validAnswers = Object.values(answers).filter((answer) => answer !== null);
   const questionElement = document.createElement('h2');
+  const progressBar = document.createElement('progress');
+  progressBar.value = progressValue;
+  progressBar.max = quizLength;
   questionElement.innerText = question;
   questionDiv.appendChild(questionElement);
   // Itera por todas as respostas válidas e verifica se é a correta para então acrescentar o elemeto à questionDiv
@@ -60,14 +65,17 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
     if (Object.values(correct_answers)[index] === 'true') currentAnswer.classList.add('correct');
     questionDiv.appendChild(currentAnswer);
   });
+  questionDiv.appendChild(progressBar);
   questionDiv.className = "question-div";
   questionDiv.addEventListener('click', countAnswers);
+  progressValue += 1;
   return questionDiv;
 }
 
 // Create appendQuestions
 
 const appendQuestions = (container, questions) => {
+  quizLength = questions.length;
   questions.forEach((questionObj) => {
     container.appendChild(createQuestionItem(questionObj));
   })
@@ -76,6 +84,7 @@ const appendQuestions = (container, questions) => {
 // Create integration function
 
 const createQuiz = async () => {
+  progressValue = 1;
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
   const params = getParams();
 
@@ -88,6 +97,7 @@ const createQuiz = async () => {
 }
 
 const randomQuiz = async () => {
+  progressValue = 1;
   try {
     const questions = await fetchQuiz({ limit: '10' });
     appendQuestions(questionContainer, questions);
@@ -99,8 +109,9 @@ const randomQuiz = async () => {
 const nextQuestion = () => {
   const currentHidden = document.querySelector('.show');
   currentHidden.classList.toggle('show');
-  if (currentHidden.nextElementSibling) currentHidden.nextElementSibling.classList.toggle('show');
-  else window.alert('FIM DE JOGO!');
+  if (currentHidden.nextElementSibling) {
+    currentHidden.nextElementSibling.classList.toggle('show');
+  } else window.alert('FIM DE JOGO!');
   console.log(`Correct answers: ${correct}`);
 }
 
