@@ -1,6 +1,7 @@
 const questionContainer = document.querySelector('#question-container');
 const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
+const randomBtn = document.querySelector('#random-btn');
 
 const getParams = () => {
   let params = {};
@@ -108,7 +109,11 @@ window.onload = async () => {
     questionContainer.firstElementChild.classList.toggle('show');
   })
 
-  
+  randomBtn.addEventListener('click', async () => {
+    questionContainer.innerHTML = '';
+    await randomQuiz();
+    questionContainer.firstElementChild.classList.toggle('show');
+  })
   
   nextBtn.addEventListener('click', nextQuestion);
 }
