@@ -35,6 +35,10 @@ header {
   background-color: #274472;
 }
 
+.quiz {
+  border: none;
+}
+
 #question-container, .btn-form {
   margin: 30px;
 }
