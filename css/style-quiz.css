@@ -6,25 +6,30 @@ p {
 a {
   text-decoration: none;
   font-size: 16px;
+  color: white;
 }
 
 footer {
-  margin: 10px;
+  background-color: #333333;
+  color: white;
 }
 
 h1 {
   font-family: 'Lobster', sans-serif;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
-  margin: 30px;
+  text-align: center;
 }
 
 header {
   text-align: center;
   margin-bottom: 40px;
+  background-color: #274472;
 }
 
 form {
@@ -35,36 +40,65 @@ form select {
   margin-bottom: 20px;
 }
 
+.filter-options {
+  display: flex;
+  max-width: 60%;
+  max-height: 40px;
+  margin: 60px auto 0px auto;
+}
+
+.filter-tema {
+  display: flex;
+  width: 250%;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.filter {
+  margin: 0px 15px;
+}
+
 #question-container {
   margin: 30px;
 }
 
 .btn-form {
-  margin: 0px 0px 30px 30px;
+  margin: 30px 30px 30px 30px;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
 }
 
 .label {
   margin-bottom: 20px;
 }
 
-.btn{
+.btn {
   background-color: #274472;
 }
 
 .hr1 {
   width: 70%;
   color: black;
-  margin: auto;
+  margin: 40px auto;
 }
+
 .hr2 {
-  width: 35%;
+  width: 50%;
   color: black;
-  margin: auto;
+  margin: 40px auto;
 }
 
 .header-title {
-  color: #FFFFFF;
+  color: #ffffff;
   align-self: center;
+}
+
+.header-logo {
+  width: 300px;
+  margin: 50px;
 }
 
 .question-div {
@@ -114,12 +148,32 @@ form select {
   justify-content: space-around;
 }
 
-.github-div {
-  text-align: center;
-  margin-bottom: 10px;
+.img-footer {
+  width: 300px;
+  margin: 80px;
 }
 
-.paragrafo-footer {
+.display-footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.list-socials {
+  margin-top: 25px;
+}
+
+.socials {
+  margin: 20px 0px;
+  list-style: none;
+}
+
+.social-links {
+  margin: 0px 10px;
+}
+
+.cprt {
+  background-color: #274472;
   text-align: center;
-  font-size: 18px;
+  padding: 0.1px;
 }
