@@ -1,12 +1,22 @@
 const questionContainer = document.querySelector('#question-container');
 const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
+const randomBtn = document.querySelector('#random-btn');
+
+let correct = 0;
 
 const getParams = () => {
-  const category = document.querySelector('[name="select-category"]:checked').value;
-  const difficulty = document.querySelector('#select-difficulty').value;
-  const limit = document.querySelector('#select-limit').value;
-  return { category, difficulty, limit };
+  let params = {};
+  if (document.querySelector('[name="select-category"]:checked')) {
+    params['category'] = document.querySelector('[name="select-category"]:checked').value;
+  }
+  if (document.querySelector('#select-difficulty').value !== "null") {
+    params['difficulty'] = document.querySelector('#select-difficulty').value;
+  }
+  if (document.querySelector('#select-limit').value !== "null") {
+    params['limit'] = document.querySelector('#select-limit').value;
+  } else params['limit'] = '10';
+  return params;
 }
 
 // Make the function fetch 
@@ -50,7 +60,7 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
     questionDiv.appendChild(currentAnswer);
   });
   questionDiv.className = "question-div";
-
+  questionDiv.addEventListener('click', countAnswers);
   return questionDiv;
 }
 
@@ -76,22 +86,46 @@ const createQuiz = async () => {
   }
 }
 
+const randomQuiz = async () => {
+  try {
+    const questions = await fetchQuiz({ limit: '10' });
+    appendQuestions(questionContainer, questions);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 const nextQuestion = () => {
   const currentHidden = document.querySelector('.show');
   currentHidden.classList.toggle('show');
   if (currentHidden.nextElementSibling) currentHidden.nextElementSibling.classList.toggle('show');
   else window.alert('FIM DE JOGO!');
+  console.log(`Correct answers: ${correct}`);
+}
+
+const countAnswers = (event) => {
+  const selected = event.target;
+  if (Array.from(selected.classList).includes('correct')) correct += 1;
+  nextQuestion();
 }
 
 // Linhas comentadas para não dar erro no node
 
 window.onload = async () => {
   filterBtn.addEventListener('click', async () => {
+    questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
+    correct = 0;
   })
-  
-  nextBtn.addEventListener('click', nextQuestion);
+
+  randomBtn.addEventListener('click', async () => {
+    questionContainer.innerHTML = '';
+    await randomQuiz();
+    questionContainer.firstElementChild.classList.toggle('show');
+    correct = 0;
+  })
+
 }
 
 // module.exports = {
