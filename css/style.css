@@ -30,7 +30,7 @@ h4 {
 
 header {
   text-align: center;
-  padding: 22px;
+  padding: 16px;
   margin-bottom: 40px;
   background-color: #274472;
 }
@@ -90,6 +90,10 @@ select {
 
 .btn {
   background-color: #274472;
+}
+
+.btn:hover {
+  background-color: #00CCFF;
 }
 
 .btn-enviar {
