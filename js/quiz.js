@@ -165,7 +165,7 @@ window.onload = async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
-    window.location.replace('#hr2');
+    window.location.replace('#question-container');
     correct = 0;
   })
 
@@ -173,7 +173,7 @@ window.onload = async () => {
     questionContainer.innerHTML = '';
     await randomQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
-    window.location.replace('#hr2');
+    window.location.replace('#question-container');
     correct = 0;
   })
 
