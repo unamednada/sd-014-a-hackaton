@@ -30,8 +30,8 @@ h4 {
 
 header {
   text-align: center;
-  padding: 22px;
-  margin-bottom: 40px;
+  padding: 16px;
+  margin-bottom: 51px;
   background-color: #274472;
 }
 
@@ -42,6 +42,12 @@ header {
 .section-title {
   margin-bottom: 42px;
 }
+ #logo {
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 29px;
+  background-color: #274472;
+ }
 
 .titles {
   margin: 23px;
@@ -69,6 +75,10 @@ header {
   text-align: center;
 }
 
+.label-div {
+  margin-top: 7px;
+}
+
 .filter-left {
   display: flex;
   flex-flow: row nowrap;
@@ -90,6 +100,10 @@ select {
 
 .btn {
   background-color: #274472;
+}
+
+.btn:hover {
+  background-color: #00CCFF;
 }
 
 .btn-enviar {
