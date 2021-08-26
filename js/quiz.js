@@ -107,7 +107,26 @@ const randomQuiz = async () => {
 }
 
 const generateResult = (result) => {
-  const message = `Você acertou ${result} de ${quizLength}`;
+  const message = `Você acertou ${result} de ${quizLength} perguntas`;
+  const average = result / quizLength;
+  let gradeMessage = '';
+  if (average < .5) gradeMessage = 'Vai estudar, vagabundo!';
+  else if (average < .7) gradeMessage = 'Você tem um bom conhecimento, vagabundo!';
+  else gradeMessage = 'Você é um gênio, vagabundo!';
+  return [message, gradeMessage];
+}
+
+const renderResult = (message, gradeMessage) => {
+  const resultDiv = document.createElement('div');
+  resultDiv.className = 'question-div';
+  const mainMessage = document.createElement('h2');
+  mainMessage.innerText = message;
+  resultDiv.appendChild(mainMessage);
+  const grade = document.createElement('li');
+  grade.innerText = gradeMessage;
+  resultDiv.appendChild(grade);
+  resultDiv.classList.add('show');
+  questionContainer.appendChild(resultDiv);
 }
 
 const nextQuestion = () => {
@@ -115,7 +134,7 @@ const nextQuestion = () => {
   currentHidden.classList.toggle('show');
   if (currentHidden.nextElementSibling) {
     currentHidden.nextElementSibling.classList.toggle('show');
-  } else window.alert('FIM DE JOGO!');
+  } else renderResult(...generateResult(correct));
   console.log(`Correct answers: ${correct}`);
 }
 
