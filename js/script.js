@@ -26,7 +26,7 @@ const getParams = () => {
 // const confirmFilter = document.querySelector('#create-quiz');
 
 // Função que faz a requisição para a API 
-const fetchQuiz = async (params = { limit = 10 }) => {
+const fetchQuiz = async (params = { limit: 10 }) => {
   const url = 'https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH';
   let endpoint = url;
   // Verifica se há parametros a serem acrescentados
