@@ -1,5 +1,6 @@
 p {
-  margin-top: 0.5em;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 13px;
   font-size: 14px;
 }
 
@@ -7,6 +8,7 @@ a {
   text-decoration: none;
   font-size: 16px;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 footer {
@@ -28,16 +30,21 @@ h4 {
 
 header {
   text-align: center;
+  padding: 22px;
   margin-bottom: 40px;
   background-color: #274472;
 }
 
-form {
+#question-container, .btn-form {
   margin: 30px;
 }
 
-form select {
-  margin-bottom: 20px;
+.section-title {
+  margin-bottom: 42px;
+}
+
+.titles {
+  margin: 23px;
 }
 
 .filter-options {
@@ -58,14 +65,6 @@ form select {
   margin: 0px 15px;
 }
 
-#question-container {
-  margin: 30px;
-}
-
-.btn-form {
-  margin: 30px 30px 30px 30px;
-}
-
 .btn-div {
   display: flex;
   justify-content: center;
@@ -77,6 +76,10 @@ form select {
 
 .btn {
   background-color: #274472;
+}
+
+.btn-enviar {
+  margin: 23px
 }
 
 .hr1 {
@@ -150,13 +153,12 @@ form select {
 
 .img-footer {
   width: 300px;
-  margin: 80px;
+  margin: 50px;
 }
 
 .display-footer {
   display: flex;
   justify-content: center;
-  padding: 50px;
 }
 
 .list-socials {
@@ -164,7 +166,7 @@ form select {
 }
 
 .socials {
-  margin: 20px 0px;
+  margin: 10px 0px;
   list-style: none;
 }
 
