@@ -19,12 +19,13 @@ h1 {
 h2, h3, h4 {
   font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
-  margin: 30px;
+  text-align: center;
 }
 
 header {
   text-align: center;
   margin-bottom: 40px;
+  background-color: #274472;
 }
 
 form {
@@ -35,12 +36,35 @@ form select {
   margin-bottom: 20px;
 }
 
+.filter-options {
+  display: flex;
+  max-width: 60%;
+  max-height: 40px;
+  margin: 40px auto 0px auto;
+}
+
+.filter-tema {
+  display: flex;
+  width: 250%;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.filter {
+  margin: 0px 15px;
+}
+
 #question-container {
   margin: 30px;
 }
 
 .btn-form {
-  margin: 0px 0px 30px 30px;
+  margin: 30px 30px 30px 30px;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
 }
 
 .label {
@@ -54,7 +78,7 @@ form select {
 .hr1 {
   width: 70%;
   color: black;
-  margin: auto;
+  margin: 40px auto;
 }
 .hr2 {
   width: 35%;
@@ -65,6 +89,15 @@ form select {
 .header-title {
   color: #FFFFFF;
   align-self: center;
+}
+
+.header-logo {
+  width: 300px;
+  margin: 50px;
+}
+
+.first-div {
+  margin: 10px;
 }
 
 .question-div {
