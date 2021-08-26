@@ -7,6 +7,9 @@ const quizBtn = document.querySelector('#quiz');
 
 
 quizBtn.addEventListener('click', () => {
-  localStorage.setItem('player', getPlayer());
-  window.location.replace('./quiz.html');
+  if (getPlayer().length !== 0) {
+    localStorage.setItem('player', getPlayer());
+    window.location.replace('./quiz.html');
+  }
+  window.alert('Digite seu nome para continuar!');
 })
