@@ -49,20 +49,34 @@ header {
 
 .filter-options {
   display: flex;
-  max-width: 60%;
-  max-height: 40px;
-  margin: 60px auto 0px auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-tema {
   display: flex;
-  width: 250%;
+  align-items: center;
+  flex-flow: row wrap;
   justify-content: center;
-  margin-top: 7px;
 }
 
 .filter {
-  margin: 0px 15px;
+  margin: 2%;
+}
+
+#temas label {
+  margin: 2%;
+  text-align: center;
+}
+
+.filter-left {
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 50%;
+}
+
+select {
+  max-width: 40%;
 }
 
 .btn-div {
@@ -102,6 +116,15 @@ header {
 .header-logo {
   width: 300px;
   margin: 50px;
+}
+
+#block-label {
+  margin-right: 2%;
+}
+
+#temas {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .question-div {
