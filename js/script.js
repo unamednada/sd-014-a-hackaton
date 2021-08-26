@@ -15,7 +15,7 @@ const getParams = () => {
   }
   if (document.querySelector('#select-limit').value !== "null") {
     params['limit'] = document.querySelector('#select-limit').value;
-  }
+  } else params['limit'] = '10';
   return params;
 }
 
