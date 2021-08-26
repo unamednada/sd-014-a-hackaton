@@ -209,7 +209,12 @@ progress {
 progress::-webkit-progress-value {
   border-radius: 12px;
   background:#0098da;
-} 
+}
+
+#question-container a {
+  color:#333333;
+  margin-top: 5%;
+}
 
 .footer {
   display: flex;
