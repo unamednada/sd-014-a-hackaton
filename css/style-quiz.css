@@ -6,17 +6,21 @@ p {
 a {
   text-decoration: none;
   font-size: 16px;
+  color: white;
 }
 
 footer {
-  margin: 10px;
+  background-color: #333333;
+  color: white;
 }
 
 h1 {
   font-family: 'Lobster', sans-serif;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
   text-align: center;
@@ -40,7 +44,7 @@ form select {
   display: flex;
   max-width: 60%;
   max-height: 40px;
-  margin: 40px auto 0px auto;
+  margin: 60px auto 0px auto;
 }
 
 .filter-tema {
@@ -71,7 +75,7 @@ form select {
   margin-bottom: 20px;
 }
 
-.btn{
+.btn {
   background-color: #274472;
 }
 
@@ -80,14 +84,15 @@ form select {
   color: black;
   margin: 40px auto;
 }
+
 .hr2 {
-  width: 35%;
+  width: 50%;
   color: black;
-  margin: auto;
+  margin: 40px auto;
 }
 
 .header-title {
-  color: #FFFFFF;
+  color: #ffffff;
   align-self: center;
 }
 
@@ -155,4 +160,30 @@ form select {
 .paragrafo-footer {
   text-align: center;
   font-size: 18px;
+}
+
+.img-footer {
+  width: 300px;
+  padding-right: 50px;
+}
+
+.display-footer {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
+.socials {
+  display: flex;
+  padding: 48px;
+}
+
+.social-links {
+  margin: 0px 10px;
+}
+
+.cprt {
+  background-color: #274472;
+  text-align: center;
+  padding: 0.1px;
 }
