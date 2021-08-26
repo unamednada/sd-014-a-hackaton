@@ -125,6 +125,10 @@ const renderResult = (message, gradeMessage) => {
   const grade = document.createElement('li');
   grade.innerText = gradeMessage;
   resultDiv.appendChild(grade);
+  const voltar = document.createElement('a');
+  voltar.href = './index.html';
+  voltar.innerText = 'Voltar à Página Inicial';
+  resultDiv.appendChild(voltar);
   resultDiv.classList.add('show');
   questionContainer.appendChild(resultDiv);
 }
