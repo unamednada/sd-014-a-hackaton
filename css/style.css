@@ -11,6 +11,11 @@ a {
   font-family: 'Roboto', sans-serif;
 }
 
+a:hover {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
 footer {
   background-color: #333333;
   color: white;
@@ -31,7 +36,7 @@ h4 {
 header {
   text-align: center;
   padding: 16px;
-  margin-bottom: 51px;
+  margin-bottom: 54px;
   background-color: #274472;
 }
 
@@ -226,7 +231,7 @@ progress::-webkit-progress-value {
 }
 
 .socials {
-  margin: 10px 0px;
+  margin: 10px;
   list-style: none;
 }
 
