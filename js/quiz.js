@@ -106,6 +106,10 @@ const randomQuiz = async () => {
   }
 }
 
+const generateResult = (result) => {
+  const message = `Você acertou ${result} de ${quizLength}`;
+}
+
 const nextQuestion = () => {
   const currentHidden = document.querySelector('.show');
   currentHidden.classList.toggle('show');
