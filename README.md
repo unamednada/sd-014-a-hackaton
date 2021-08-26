@@ -42,13 +42,13 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. main com descrição e input para nome; 
 	- [X]. footer com about-us: linkedin e github do grupo;
 ### 2 Criar o estilo para o index.html:
-	- [x]. Utilizar bootstrap ou outro framework;
-	- [x]. Utilizar o coolors.co ou outro site para paleta de cores;
-	- [x]. Desktop only;
+	- [X]. Utilizar bootstrap ou outro framework;
+	- [X]. Utilizar o coolors.co ou outro site para paleta de cores;
+	- [X]. Desktop only;
 ### 3 Criar o quiz.html dinâmico:
 	- [X]. header com logo e título – igual ao index.html;
 	- [X]. subtitulo de saudação, instruções, selectors de tema e dificuldade, botão de submit;
-	- [I-F]. container de perguntas com contador de perguntas e percentagem de conclusão – obs pesquisar barra de progresso DOM;
+	- [ ]. container de perguntas com contador de perguntas e percentagem de conclusão – obs pesquisar barra de progresso DOM;
 	- [X]. footer igual ao index.html;
 ### 4 Criar o estilo para o quiz.html:
 	- [x]. Mesmas regras para o index.html;
