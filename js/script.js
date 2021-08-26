@@ -83,6 +83,15 @@ const createQuiz = async () => {
   }
 }
 
+const randomQuiz = async () => {
+  try {
+    const questions = await fetchQuiz();
+    appendQuestions(questionContainer, questions);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 const nextQuestion = () => {
   const currentHidden = document.querySelector('.show');
   currentHidden.classList.toggle('show');
@@ -98,8 +107,8 @@ window.onload = async () => {
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
   })
-  
 
+  
   
   nextBtn.addEventListener('click', nextQuestion);
 }
