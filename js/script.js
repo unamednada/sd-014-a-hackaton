@@ -88,7 +88,7 @@ const createQuiz = async () => {
 
 const randomQuiz = async () => {
   try {
-    const questions = await fetchQuiz();
+    const questions = await fetchQuiz({ limit: '10' });
     appendQuestions(questionContainer, questions);
   } catch (error) {
     console.log(error);
@@ -125,7 +125,7 @@ window.onload = async () => {
     questionContainer.firstElementChild.classList.toggle('show');
     correct = 0;
   })
-  
+
 }
 
 // module.exports = {
