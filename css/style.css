@@ -125,19 +125,13 @@ select {
   margin: 40px auto;
 }
 
-.hr2 {
-  width: 50%;
-  color: #FFFFFF;
-  margin: 40px auto;
-}
-
 .header-title {
   color: #ffffff;
   align-self: center;
 }
 
 .header-logo {
-  width: 300px;
+  width: 30px;
   margin: 50px;
 }
 
