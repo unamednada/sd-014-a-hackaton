@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style-quiz.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Tryvia</title>
   </head>
   <body>
@@ -28,7 +28,9 @@
     </header>
     <main>
       <section>
-        <h2>Olá <span></span>! Seja bem vindo(a) ao nosso Quiz.</h2>
+        <h2>
+          Olá <span id="player-name"></span>! Seja bem vindo(a) ao nosso Quiz.
+        </h2>
         <h3>
           Teste seus conhecimentos em tecnologia e compartilhe no Slack sua
           pontuação.
@@ -39,14 +41,14 @@
         </h4>
       </section>
       <hr class="hr1" />
-      <section>
-        <section class="filter-options">
+      <section class="filter-options">
+        <div class="filter-left">
           <select
             class="form-select form-select-sm filter"
             aria-label=".form-select-sm example"
             id="select-difficulty"
           >
-            <option value="null" selected>Selecione a dificuldade</option>
+            <option value="null" selected>Dificuldade</option>
             <option value="easy">Fácil</option>
             <option value="medium">Padrão</option>
             <option value="hard">Difícil</option>
@@ -56,14 +58,16 @@
             aria-label=".form-select-sm example"
             id="select-limit"
           >
-            <option value="null" selected>Quantidade de perguntas</option>
+            <option value="null" selected>#Perguntas</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
           </select>
-          <div class="filter-tema">
-            <label class="label"
-              >Selecione o tema do Quiz:
+        </div>
+        <label for="select-category" id="block-label">Tema:</label>
+        <div class="filter-tema">
+          <div id="temas">
+            <label for="Linux">
               <input
                 class="form-check-input"
                 type="radio"
@@ -72,6 +76,9 @@
                 value="Linux"
               />
               Linux
+            </label>
+
+            <label for="Sql">
               <input
                 class="form-check-input"
                 type="radio"
@@ -79,7 +86,9 @@
                 id="inlineRadio2"
                 value="Sql"
               />
-              Sql
+              SQL
+            </label>
+            <label for="Code">
               <input
                 class="form-check-input"
                 type="radio"
@@ -88,6 +97,8 @@
                 value="Code"
               />
               Code
+            </label>
+            <label for="Docker">
               <input
                 class="form-check-input"
                 type="radio"
@@ -96,6 +107,8 @@
                 value="Docker"
               />
               Docker
+            </label>
+            <label for="devOps">
               <input
                 class="form-check-input"
                 type="radio"
@@ -106,17 +119,15 @@
               DevOps
             </label>
           </div>
-        </section>
-        <section class="btn-div">
-          <button
-            id="filter-btn"
-            type="button"
-            class="btn btn-primary btn-form"
-          >
-            Iniciar
-          </button>
-          <button id="random-btn" type="button" class="btn btn-primary btn-form">Random</button>
-        </section>
+        </div>
+      </section>
+      <section class="btn-div">
+        <button id="filter-btn" type="button" class="btn btn-primary btn-form">
+          Iniciar
+        </button>
+        <button id="random-btn" type="button" class="btn btn-primary btn-form">
+          Random
+        </button>
       </section>
       <hr class="hr2" />
       <div id="question-container"></div>
@@ -124,25 +135,55 @@
     <footer>
       <section class="display-footer">
         <div>
-          <img src="assets/logo-tryvia-white.png" class="img-footer">
+          <img src="assets/logo-tryvia-white.png" class="img-footer" />
         </div>
         <ul class="list-socials">
-          <li class="socials"><a href="https://github.com/unamednada/sd-014-a-hackaton" class="social-links">
-            <img src="https://img.icons8.com/windows/35/000000/github.png"/>Página do Projeto</a></li>
-          <li class="socials"><a href="https://www.linkedin.com/in/ilanaragao/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Ilan Aragão</a></li>
-          <li class="socials"><a href="https://www.linkedin.com/in/flavio-anselmo-dos-santos-pires/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Flávio Pires</a></li>
-          <li class="socials"><a href="https://www.linkedin.com/in/unamednada/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Gustavo Dias</a></li>
+          <li class="socials">
+            <a
+              href="https://github.com/unamednada/sd-014-a-hackaton"
+              class="social-links"
+            >
+              <img
+                src="https://img.icons8.com/windows/35/000000/github.png"
+              />Página do Projeto</a
+            >
+          </li>
+          <li class="socials">
+            <a
+              href="https://www.linkedin.com/in/ilanaragao/"
+              class="social-links"
+            >
+              <img
+                src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"
+              />Ilan Aragão</a
+            >
+          </li>
+          <li class="socials">
+            <a
+              href="https://www.linkedin.com/in/flavio-anselmo-dos-santos-pires/"
+              class="social-links"
+            >
+              <img
+                src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"
+              />Flávio Pires</a
+            >
+          </li>
+          <li class="socials">
+            <a
+              href="https://www.linkedin.com/in/unamednada/"
+              class="social-links"
+            >
+              <img
+                src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"
+              />Gustavo Dias</a
+            >
+          </li>
         </ul>
       </section>
       <section class="cprt">
-        <p>
-          Copyright © 2021 - Tryvia - Todos os direitos reservados.
-        </p>
+        <p>Copyright © 2021 - Tryvia - Todos os direitos reservados.</p>
       </section>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/quiz.js"></script>
   </body>
 </html>

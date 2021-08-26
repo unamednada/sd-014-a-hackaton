@@ -1,8 +1,8 @@
 const questionContainer = document.querySelector('#question-container');
-const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
 const randomBtn = document.querySelector('#random-btn');
-
+const player = localStorage.getItem('player');
+  
 let correct = 0;
 
 const getParams = () => {
@@ -49,8 +49,9 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   const questionDiv = document.createElement('div');
   // Somente aceita respostas válidas
   const validAnswers = Object.values(answers).filter((answer) => answer !== null);
-
-  questionDiv.innerHTML = `<h2 class="question">${question}</h2>`;
+  const questionElement = document.createElement('h2');
+  questionElement.innerText = question;
+  questionDiv.appendChild(questionElement);
   // Itera por todas as respostas válidas e verifica se é a correta para então acrescentar o elemeto à questionDiv
   validAnswers.forEach((answer, index) => {
     const currentAnswer = document.createElement('li');
@@ -105,17 +106,28 @@ const nextQuestion = () => {
 
 const countAnswers = (event) => {
   const selected = event.target;
-  if (Array.from(selected.classList).includes('correct')) correct += 1;
-  nextQuestion();
+  if (Array.from(selected.classList).includes('answer')) {
+    if (Array.from(selected.classList).includes('correct')) correct += 1;
+    nextQuestion();
+  }
+}
+
+const showPlayer = (name) => {
+  document.querySelector('#player-name').innerText = name;
+  localStorage.removeItem('player');
 }
 
 // Linhas comentadas para não dar erro no node
 
 window.onload = async () => {
+
+  showPlayer(player);
+
   filterBtn.addEventListener('click', async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
+    window.location.replace('#question-container');
     correct = 0;
   })
 
@@ -123,6 +135,7 @@ window.onload = async () => {
     questionContainer.innerHTML = '';
     await randomQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
+    window.location.replace('#question-container');
     correct = 0;
   })
 
