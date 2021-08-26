@@ -113,9 +113,9 @@ const generateResult = (result) => {
   const message = `Você acertou ${result} de ${quizLength} perguntas`;
   const average = result / quizLength;
   let gradeMessage = '';
-  if (average < .5) gradeMessage = 'Vai estudar, vagabundo!';
-  else if (average < .7) gradeMessage = 'Você tem um bom conhecimento, vagabundo!';
-  else gradeMessage = 'Você é um gênio, vagabundo!';
+  if (average < .6) gradeMessage = 'Que tal estudar um pouco mais?';
+  else if (average < .8) gradeMessage = 'Seu resultado foi MAAAAAAAAAAAARAVILHOSO!';
+  else gradeMessage = 'Você é um gênio. Parabéns!';
   return [message, gradeMessage];
 }
 
