@@ -127,7 +127,7 @@ window.onload = async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
     questionContainer.firstElementChild.classList.toggle('show');
-    window.location.replace('#question-container');
+    window.location.replace('#hr2');
     correct = 0;
   })
 
