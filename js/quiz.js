@@ -17,7 +17,7 @@ const getParams = () => {
   }
   if (document.querySelector('#select-limit').value !== "null") {
     params['limit'] = document.querySelector('#select-limit').value;
-  } else params['limit'] = '10';
+  }
   return params;
 }
 
@@ -88,11 +88,14 @@ const createQuiz = async () => {
   //Aqui vamos pegar os valores dos parametros, se houver e chamar as funções necessárias para criar o quiz
   const params = getParams();
 
-  try {
-    const questions = await fetchQuiz(params);
-    appendQuestions(questionContainer, questions);
-  } catch (error) {
-    console.log(error);
+  if (Object.keys(params).length === 0) window.alert('Selecione algum parâmetro ou clique em Random!')
+  else {
+    try {
+      const questions = await fetchQuiz(params);
+      appendQuestions(questionContainer, questions);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
@@ -164,9 +167,13 @@ window.onload = async () => {
   filterBtn.addEventListener('click', async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
-    questionContainer.firstElementChild.classList.toggle('show');
-    window.location.replace('#question-container');
-    correct = 0;
+    try {
+      questionContainer.firstElementChild.classList.toggle('show');
+      window.location.replace('#question-container');
+      correct = 0;
+    } catch (error) {
+      console.log('Selecione algum parâmetro ou clique em Random!');
+    }
   })
 
   randomBtn.addEventListener('click', async () => {
