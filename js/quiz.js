@@ -1,8 +1,8 @@
 const questionContainer = document.querySelector('#question-container');
-const nextBtn = document.querySelector('#btn-next');
 const filterBtn = document.querySelector('#filter-btn');
 const randomBtn = document.querySelector('#random-btn');
-
+const player = localStorage.getItem('player');
+  
 let correct = 0;
 
 const getParams = () => {
@@ -109,9 +109,17 @@ const countAnswers = (event) => {
   nextQuestion();
 }
 
+const showPlayer = (name) => {
+  document.querySelector('#player-name').innerText = name;
+  localStorage.removeItem('player');
+}
+
 // Linhas comentadas para não dar erro no node
 
 window.onload = async () => {
+
+  showPlayer(player);
+
   filterBtn.addEventListener('click', async () => {
     questionContainer.innerHTML = '';
     await createQuiz();
