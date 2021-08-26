@@ -49,8 +49,9 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   const questionDiv = document.createElement('div');
   // Somente aceita respostas válidas
   const validAnswers = Object.values(answers).filter((answer) => answer !== null);
-
-  questionDiv.innerHTML = `<h2 class="question">${question}</h2>`;
+  const questionElement = document.createElement('h2');
+  questionElement.innerText = question;
+  questionDiv.appendChild(questionElement);
   // Itera por todas as respostas válidas e verifica se é a correta para então acrescentar o elemeto à questionDiv
   validAnswers.forEach((answer, index) => {
     const currentAnswer = document.createElement('li');
