@@ -76,6 +76,12 @@ describe('Testa se a função populateAnswers', () => {
     expect(quiz.populateAnswers).toHaveBeenCalledWith(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalledTimes(1);
     expect(quiz.populateAnswers(mockArray, mockDiv, mockKey)).toEqual(undefined);
+    expect(quiz.populateAnswers).toHaveBeenCalledTimes(2);
+  })
+
+  it('modifica a div ao ser chamada com parâmetros "mock"', () => {
+    quiz.populateAnswers(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalled();
   })
 
 })
