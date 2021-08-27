@@ -159,5 +159,6 @@ const showPlayer = (name) => {
 module.exports = {
   fetchQuiz,
   populateAnswers,
-  appendQuestions
+  appendQuestions,
+  createQuiz
 }

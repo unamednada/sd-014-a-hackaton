@@ -157,4 +157,15 @@ describe('Testa se a função populateAnswers', () => {
 
 describe('Testa se a função appendQuestions()', () => {
   
+  quiz.createQuiz = jest.fn( async () => {
+    quiz.appendQuestions();
+  })
+
+  quiz.appendQuestions = jest.fn();
+
+  it('é chamada pela função createQuiz()', async () => {
+    await quiz.createQuiz();
+    expect(quiz.appendQuestions).toHaveBeenCalled();
+  })
+
 })
