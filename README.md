@@ -4,6 +4,8 @@ Este é o repositório de Gustavo Dias, Flávio Pires e Ilan Aragão.
 
 Aqui será desenvolvido um projeto bônus ao final do módulo de fundamentos no curso de WebDev na Trybe!
 
+### CHANGE TO BRANCH TEST TO VIEW ASSESSMENTS!!! ###
+
 ## As regras do projeto são:
 
 - O projeto deve ser feito em grupos de 2 a 4 pessoas
