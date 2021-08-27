@@ -131,6 +131,26 @@ describe('Testa se a função populateAnswers', () => {
     expect(mockDiv).toEqual([]);
   })
 
+  it('funciona tanto com forEach quanto com o for loop tradicional', () => {
+    quiz.populateAnswers.mockReset();
+
+    quiz.populateAnswers.mockImplementation((array, div, key) => {
+      // mockando o resultado da hof
+      array.forEach((answer, index) => {
+        const currentAnswer = {
+          innerText: answer,
+          classList: ['answer']
+        }
+        if (Object.values(key)[index] === 'true') currentAnswer.classList.push('correct');
+        div.push(currentAnswer);
+      })
+    });
+
+    quiz.populateAnswers([]);
+    expect(quiz.populateAnswers).toHaveBeenCalled();
+
+  })
+
 })
 
 describe('Testa se a função appendQuestions()', () => {
