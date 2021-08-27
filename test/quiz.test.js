@@ -132,3 +132,7 @@ describe('Testa se a função populateAnswers', () => {
   })
 
 })
+
+describe('Testa se a função appendQuestions()', () => {
+  // testes para o forEach aqui
+})
