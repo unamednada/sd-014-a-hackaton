@@ -91,9 +91,16 @@ describe('Testa se a função populateAnswers', () => {
   })
 
   it('acrescenta os objetos corretamente à mockDiv', () => {
-    expect(mockDiv).toEqual([]);
     quiz.populateAnswers.mockReset();
+    
+    expect(mockDiv).toEqual([]);
     expect(quiz.populateAnswers).not.toHaveBeenCalled();
+    quiz.populateAnswers(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalled();
+    expect(quiz.populateAnswers).toHaveBeenCalledTimes(1);
+    quiz.populateAnswers(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalledWith(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalledTimes(2);
   })
 
 })
