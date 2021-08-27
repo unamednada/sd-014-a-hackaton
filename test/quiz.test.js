@@ -28,14 +28,14 @@ describe ('Testa se a função fetchQuiz', () => {
     json: async () => mockReturn
   }));
 
-  it('retorna um array ao ser chamada sem parâmetros', async () => {
+  it('retorna um ao ser chamada sem parâmetros', async () => {
     expect.assertions(3);
     await expect(quiz.fetchQuiz()).resolves.toEqual(mockReturn);
     expect(fetch).toHaveBeenCalled();
     expect(fetch).toHaveBeenCalledTimes(1);
   })
 
-  it('retorna um array ao ser chamada com parâmetros válidos', async () => {
+  it('retorna um ao ser chamada com parâmetros válidos', async () => {
     expect.assertions(5);
     await expect(quiz.fetchQuiz({ category: 'linux' })).resolves.toEqual(mockReturn);
     await expect(quiz.fetchQuiz({ category: 'linux', difficulty: 'hard' })).resolves.toEqual(mockReturn);
@@ -62,7 +62,7 @@ describe('Testa se a função populateAnswers', () => {
     }
   })
 
-  const mockArray = ['answer1', 'answer2', 'answer3'];
+  const mockArray= ['answer1', 'answer2', 'answer3'];
   let mockDiv = [];
   const mockKey = {
     1: 'false',
@@ -94,13 +94,36 @@ describe('Testa se a função populateAnswers', () => {
     expect(mockDiv).not.toEqual([]);
   })
 
-  it('acrescenta os objetos corretamente à mockDiv', () => {    
+  it('acrescenta os objetos corretamente à mockDiv', () => {  
+    
+    const expectedDiv = [
+      {
+        "classList": [
+          "answer",
+        ],
+        "innerText": "answer1",
+      },
+      {
+        "classList": [
+          "answer",
+        ],
+        "innerText": "answer2",
+      },
+      {
+        "classList": [
+          "answer",
+          "correct",
+        ],
+        "innerText": "answer3",
+      },
+    ];
+
     expect(mockDiv).toEqual([]);
     expect(quiz.populateAnswers).not.toHaveBeenCalled();
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalled();
     expect(quiz.populateAnswers).toHaveBeenCalledTimes(1);
-    expect(mockDiv).toEqual([]);
+    expect(mockDiv).toEqual(expectedDiv);
   })
 
 })
