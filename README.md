@@ -52,18 +52,18 @@ Decidimos utilizar a API https://quizapi.io/ para desenvolver uma página intera
 	- [X]. footer igual ao index.html;
 ### 4 Criar o estilo para o quiz.html:
 	- [X]. Mesmas regras para o index.html;
-### 5 Criar funções assíncronas básicas:
+### 5 Criar funções assíncronas e de manipulação do DOM:
 	- [X]. fetchQuiz(params) – responsável por retornar o quiz já filtrado;
 	- [X]. createQuestionItem – responsável por criar uma div para a questão dentro do container de perguntas;
 	- [X]. appendQuestions – responsável por acrescentar;
 	- [X]. integrar funções fetchQuiz e appendQuestions para renderizar perguntas na tela;
 	- [X]. nextQuestion – responsável por trocar o display da pergunta atual;
 	- [X]. countAnswers – responsável por verificar a resposta e acrescentar ao contador;
-	- [x]. generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
-	- [x]. renderResult – responsável por criar elemento DOM resultado * usando modal * contendo nome, mensagem e total de acertos e botão de refazer o teste;
+	- [X]. generateResult – responsável por verificar total de acertos e selecionar mensagem apropriada;
+	- [X]. renderResult – responsável por criar elemento DOM resultado * usando modal * contendo nome, mensagem e total de acertos e botão de refazer o teste;
 ### 6 Criar testes para as funções:
 	- [X]. Testar fetchQuiz;
-	- [...]. Testar funcionamento das HoFs;
+	- [X]. Testar funcionamento das HoFs;
 ### 7 Criar logo, escolher estilo geral do site:
 	- [X]. Criar logo;
 	- [X]. Escolher fonte;
