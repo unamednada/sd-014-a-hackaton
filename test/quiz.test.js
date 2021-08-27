@@ -28,14 +28,14 @@ describe ('Testa se a função fetchQuiz', () => {
     json: async () => mockReturn
   }));
 
-  it('retorna um ao ser chamada sem parâmetros', async () => {
+  it('retorna um array ao ser chamada sem parâmetros', async () => {
     expect.assertions(3);
     await expect(quiz.fetchQuiz()).resolves.toEqual(mockReturn);
     expect(fetch).toHaveBeenCalled();
     expect(fetch).toHaveBeenCalledTimes(1);
   })
 
-  it('retorna um ao ser chamada com parâmetros válidos', async () => {
+  it('retorna um array ao ser chamada com parâmetros válidos', async () => {
     expect.assertions(5);
     await expect(quiz.fetchQuiz({ category: 'linux' })).resolves.toEqual(mockReturn);
     await expect(quiz.fetchQuiz({ category: 'linux', difficulty: 'hard' })).resolves.toEqual(mockReturn);
