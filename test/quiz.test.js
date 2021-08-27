@@ -78,6 +78,28 @@ describe('Testa se a função populateAnswers', () => {
     quiz.populateAnswers.mockClear();
   })
 
+  const expectedDiv = [
+    {
+      "classList": [
+        "answer",
+      ],
+      "innerText": "answer1",
+    },
+    {
+      "classList": [
+        "answer",
+      ],
+      "innerText": "answer2",
+    },
+    {
+      "classList": [
+        "answer",
+        "correct",
+      ],
+      "innerText": "answer3",
+    },
+  ];
+
   it('se comporta como o esperado quando passamos parâmetros "mock"', () => {
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalled();
@@ -95,28 +117,6 @@ describe('Testa se a função populateAnswers', () => {
   })
 
   it('acrescenta os objetos corretamente à mockDiv', () => {  
-    
-    const expectedDiv = [
-      {
-        "classList": [
-          "answer",
-        ],
-        "innerText": "answer1",
-      },
-      {
-        "classList": [
-          "answer",
-        ],
-        "innerText": "answer2",
-      },
-      {
-        "classList": [
-          "answer",
-          "correct",
-        ],
-        "innerText": "answer3",
-      },
-    ];
 
     expect(mockDiv).toEqual([]);
     expect(quiz.populateAnswers).not.toHaveBeenCalled();
@@ -148,7 +148,11 @@ describe('Testa se a função populateAnswers', () => {
 
     quiz.populateAnswers([]);
     expect(quiz.populateAnswers).toHaveBeenCalled();
+    expect(mockDiv).toEqual([]);
 
+    quiz.populateAnswers(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalledTimes(2);
+    expect(mockDiv).toEqual(expectedDiv);
   })
 
 })
