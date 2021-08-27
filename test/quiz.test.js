@@ -1,6 +1,6 @@
 jest.mock('node-fetch');
 const fetch = require('node-fetch');
-const script = require('../js/script.js');
+const quiz = require('../js/quiz.js');
 
 describe ('Testa se a função fetchQuiz', () => {
 
