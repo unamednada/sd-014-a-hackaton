@@ -70,6 +70,10 @@ describe('Testa se a função populateAnswers', () => {
     3: 'true'
   };
 
+  beforeEach(() => {
+    mockDiv = [];
+  })
+
   it('se comporta como o esperado quando passamos parâmetros "mock"', () => {
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalled();
@@ -82,6 +86,7 @@ describe('Testa se a função populateAnswers', () => {
   it('modifica a div ao ser chamada com parâmetros "mock"', () => {
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalled();
+    expect(mockDiv).toEqual([]);
   })
 
 })
