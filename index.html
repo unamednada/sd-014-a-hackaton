@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,7 +25,7 @@
   </head>
   <body>
     <header class="header">
-      <img src="assets/logo-tryvia-white-blue.png" alt="" class="header-logo" />
+      <img src="assets/logo-tryvia-white-blue.png" alt="" id="logo" class="header-logo" />
     </header>
     <main>
       <section class="section-title">
@@ -32,13 +33,13 @@
           O Tryvia é um jogo idealizado por um grupo de alunos da turma 'One 4 All' da Trybe, como parte de um Projeto Bônus.
         </h2>
         <h2 class="titles">São perguntas e respostas onde você testa seus conhecimentos em diversas áreas de tecnologia.</h2>
-        <h3 class="titles">Para iniciar, digite seu nome e clique no botão 'Enviar'.</h3>
+        <h3 class="titles">Para iniciar, digite seu nome e clique no botão 'QUIZ!'.</h3>
         <h3 class="titles">Divirta-se!</h3>
       </section>
       <hr class="hr1">
       <section class="btn-div btn-form">
         <div class="col-md-2 mb-3">
-          <label for="validationDefault01">Digite seu nome:</label>
+          <label class="label-div" for="validationDefault01">Digite seu nome:</label>
           <input
             type="text"
             class="form-control"
@@ -46,7 +47,7 @@
             placeholder="ex: Flávio Pires"
           />
         </div>
-        <button id="quiz" type="button" class="btn btn-primary">QUIZ!</button>
+        <button id="quiz" type="button" class="btn btn-primary btn-form quiz">QUIZ!</button>
       </section>
     </main>
     <hr class="hr1">
@@ -57,13 +58,17 @@
         </div>
         <ul class="list-socials">
           <li class="socials"><a href="https://github.com/unamednada/sd-014-a-hackaton" class="social-links">
-            <img src="https://img.icons8.com/windows/35/000000/github.png"/>Página do Projeto</a></li>
+            <img src="assets/4202098_github_code_developer_logo_icon.png"/>&nbsp;
+            Página do Projeto</a></li>
           <li class="socials"><a href="https://www.linkedin.com/in/ilanaragao/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Ilan Aragão</a></li>
+            <img src="assets/107178_circle_linkedin_icon.png"/>&nbsp;
+            Ilan Aragão</a></li>
           <li class="socials"><a href="https://www.linkedin.com/in/flavio-anselmo-dos-santos-pires/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Flávio Pires</a></li>
+            <img src="assets/107178_circle_linkedin_icon.png"/>&nbsp;
+            Flávio Pires</a></li>
           <li class="socials"><a href="https://www.linkedin.com/in/unamednada/" class="social-links">
-            <img src="https://img.icons8.com/fluency/35/000000/linkedin-circled.png"/>Gustavo Dias</a></li>
+            <img src="assets/107178_circle_linkedin_icon.png"/>&nbsp;
+            Gustavo Dias</a></li>
         </ul>
       </section>
       <section class="cprt">

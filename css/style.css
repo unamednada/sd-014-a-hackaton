@@ -3,12 +3,17 @@ p {
   margin-top: 13px;
   font-size: 14px;
 }
-
+ 
 a {
   text-decoration: none;
   font-size: 16px;
   color: white;
   font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+  font-weight: 700;
+  color: #FFFFFF;
 }
 
 footer {
@@ -30,9 +35,13 @@ h4 {
 
 header {
   text-align: center;
-  padding: 22px;
-  margin-bottom: 40px;
+  padding: 16px;
+  margin-bottom: 54px;
   background-color: #274472;
+}
+
+.quiz {
+  border: none;
 }
 
 #question-container, .btn-form {
@@ -42,6 +51,12 @@ header {
 .section-title {
   margin-bottom: 42px;
 }
+ #logo {
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 29px;
+  background-color: #274472;
+ }
 
 .titles {
   margin: 23px;
@@ -69,6 +84,10 @@ header {
   text-align: center;
 }
 
+.label-div {
+  margin-top: 7px;
+}
+
 .filter-left {
   display: flex;
   flex-flow: row nowrap;
@@ -92,6 +111,10 @@ select {
   background-color: #274472;
 }
 
+.btn:hover {
+  background-color: #00CCFF;
+}
+
 .btn-enviar {
   margin: 23px
 }
@@ -102,19 +125,13 @@ select {
   margin: 40px auto;
 }
 
-.hr2 {
-  width: 50%;
-  color: black;
-  margin: 40px auto;
-}
-
 .header-title {
   color: #ffffff;
   align-self: center;
 }
 
 .header-logo {
-  width: 300px;
+  width: 50%;
   margin: 50px;
 }
 
@@ -133,40 +150,64 @@ select {
   align-items: center;
   padding: 5%;
   margin: 100px auto;
-  background-color: darkgray;
-  max-width: 50%;
+  background-color: #FFFFFF;
+  min-width: 60%;
+  border: 2px solid rgba(128, 128, 128, 0.3);
   border-radius: 12px;
 }
 
 .question-div h2 {
   margin-bottom: 80px;
-  background-color: darkcyan;
-  padding: 5%;
+  background-color: #274472;
+  padding: 3%;
   text-align: center;
   border-radius: 12px;
-  color: darkblue;
+  color: #FFFFFF;
 }
 
 .question-div li {
   list-style: none;
-  margin: 2%;
-  padding: 2%;
-  background-color: darkblue;
+  margin: 1%;
+  padding: 1%;
+  background-color: #0098da;
   border-radius: 7px;
-  color: darkcyan;
+  color: #FFFFFF;
   transition: hover linear 200ms;
   min-width: 50%;
   text-align: center;
 }
 
 .question-div li:hover {
-  background-color: darkcyan;
-  color: darkgray;
+  background-color: #274472;
+  color: #FFFFFF;
   cursor: pointer;
 }
 
 .show {
   display: flex !important;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  margin-top: 5%;
+  border-radius: 12px;
+}
+
+::-webkit-progress-bar {
+  background-color: #FFFFFF;
+  border: solid 2px rgba(128, 128, 128, 0.3);
+  border-radius: 12px;
+}
+
+progress::-webkit-progress-value {
+  border-radius: 12px;
+  background:#0098da;
+}
+
+#question-container a {
+  color:#333333;
+  margin-top: 5%;
 }
 
 .footer {
@@ -189,7 +230,7 @@ select {
 }
 
 .socials {
-  margin: 10px 0px;
+  margin: 10px;
   list-style: none;
 }
 
