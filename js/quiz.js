@@ -190,5 +190,6 @@ window.onload = async () => {
 
 // module.exports = {
 //   fetchQuiz,
-//   createQuestionItem
+//   populateAnswers,
+//   appendQuestions
 // }
