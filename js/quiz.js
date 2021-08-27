@@ -25,8 +25,6 @@ const getParams = () => {
 
 // const fetch = require('node-fetch');
 
-// const confirmFilter = document.querySelector('#create-quiz');
-
 // Função que faz a requisição para a API 
 const fetchQuiz = async (params = {}) => {
   const url = 'https://quizapi.io/api/v1/questions?apiKey=Sv36yp6PpNiHdkVuzwgj6XSswZTUPlrKoh7P6KZH';
@@ -187,5 +185,6 @@ window.onload = async () => {
 }
 
 // module.exports = {
-//   fetchQuiz
+//   fetchQuiz,
+//   createQuestionItem
 // }
