@@ -169,10 +169,12 @@ describe('Testa se a função appendQuestions()', () => {
 
   let mockParentElement = [];
 
-  quiz.createQuestionItem = jest.fn().mockReturnValue({
+  const mockHeyHo = {
     innerText: 'hey',
     classList: ['ho']
-  })
+  }
+
+  quiz.createQuestionItem = jest.fn().mockReturnValue(mockHeyHo);
 
   it('quando chamada com o mock da função createQuestionItem(), retorna o objeto esperado', () => {
     quiz.appendQuestions.mockImplementation((container, questions) => {
@@ -183,6 +185,11 @@ describe('Testa se a função appendQuestions()', () => {
   
     quiz.appendQuestions.mockClear();
     expect(mockParentElement).toEqual([]);
+    quiz.appendQuestions(mockParentElement, mockReturn);
+    expect(quiz.appendQuestions).toHaveBeenCalled();
+    expect(quiz.appendQuestions).toHaveBeenCalledTimes(1);
+    expect(mockParentElement).not.toEqual([]);
+    expect(mockParentElement).toEqual(expect.arrayContaining([mockHeyHo]));
   })
 
 
