@@ -126,4 +126,9 @@ describe('Testa se a função populateAnswers', () => {
     expect(mockDiv).toEqual(expectedDiv);
   })
 
+  it('tem seus efeitos restaurados após o mockClear()', () => {
+    expect(quiz.populateAnswers).not.toHaveBeenCalled();
+    expect(mockDiv).toEqual([]);
+  })
+
 })
