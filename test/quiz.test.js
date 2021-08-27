@@ -191,6 +191,5 @@ describe('Testa se a função appendQuestions()', () => {
     expect(mockParentElement).not.toEqual([]);
     expect(mockParentElement).toEqual(expect.arrayContaining([mockHeyHo]));
   })
-
-
+  
 })
