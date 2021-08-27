@@ -50,6 +50,7 @@ describe('Testa se a função populateAnswers', () => {
   //mockar tudo o que depende do objeto document antes de testar
 
   quiz.populateAnswers = jest.fn((array, div, key) => {
+    // mockando o resultado da hof
     for (let i = 0; i < array.length; i += 1) {
       const answer = array[i];
       const currentAnswer = {
@@ -61,8 +62,18 @@ describe('Testa se a função populateAnswers', () => {
     }
   })
 
-  it('', () => {
+  const mockArray = ['answer1', 'answer2', 'answer3'];
+  let mockDiv = [];
+  const mockKey = {
+    1: 'false',
+    2: 'false',
+    3: 'true'
+  };
 
+  it('se comporta como o esperado quando passamos parâmetros "mock"', () => {
+    quiz.populateAnswers(mockArray, mockDiv, mockKey);
+    expect(quiz.populateAnswers).toHaveBeenCalled();
+    expect(quiz.populateAnswers).toHaveBeenCalledWith('xablau', mockDiv, mockKey);
   })
 
 })
