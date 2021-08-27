@@ -160,5 +160,6 @@ module.exports = {
   fetchQuiz,
   populateAnswers,
   appendQuestions,
-  createQuiz
+  createQuiz,
+  createQuestionItem
 }

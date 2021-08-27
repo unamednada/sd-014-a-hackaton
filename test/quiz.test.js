@@ -2,27 +2,27 @@ jest.mock('node-fetch');
 const fetch = require('node-fetch');
 const quiz = require('../js/quiz.js');
 
-describe ('Testa se a função fetchQuiz', () => {
+const mockReturn = [{
+  question: 'What is the correct way to add 1 to the $count variable?',
+  answers: {
+    a: '++count',
+    b: 'count++',
+    c: '$count =+1',
+    d: '$count++;',
+    e: null,
+    f: null
+  },
+  correct_answers: {
+    a:'false',
+    b: 'false',
+    c: 'false',
+    d: 'true',
+    e: 'false',
+    f: 'false'
+  }
+}];
 
-  const mockReturn = [{
-    question: 'What is the correct way to add 1 to the $count variable?',
-    answers: {
-      a: '++count',
-      b: 'count++',
-      c: '$count =+1',
-      d: '$count++;',
-      e: null,
-      f: null
-    },
-    correct_answers: {
-      a:'false',
-      b: 'false',
-      c: 'false',
-      d: 'true',
-      e: 'false',
-      f: 'false'
-    }
-  }];
+describe ('Testa se a função fetchQuiz', () => {
 
   fetch.mockImplementation(async (endpoint) => ({
     json: async () => mockReturn
@@ -152,12 +152,11 @@ describe('Testa se a função populateAnswers', () => {
     expect(quiz.populateAnswers).toHaveBeenCalledTimes(2);
     expect(mockDiv).toEqual(expectedDiv);
   })
-
 })
 
 describe('Testa se a função appendQuestions()', () => {
   
-  quiz.createQuiz = jest.fn( async () => {
+  quiz.createQuiz = jest.fn(async () => {
     quiz.appendQuestions();
   })
 
@@ -167,5 +166,24 @@ describe('Testa se a função appendQuestions()', () => {
     await quiz.createQuiz();
     expect(quiz.appendQuestions).toHaveBeenCalled();
   })
+
+  let mockParentElement = [];
+
+  quiz.createQuestionItem = jest.fn().mockReturnValue({
+    innerText: 'hey',
+    classList: ['ho']
+  })
+
+  it('quando chamada com o mock da função createQuestionItem(), retorna o objeto esperado', () => {
+    quiz.appendQuestions.mockImplementation((container, questions) => {
+      questions.forEach(() => {
+        container.push(quiz.createQuestionItem());
+      })
+    })  
+  
+    quiz.appendQuestions.mockClear();
+    expect(mockParentElement).toEqual([]);
+  })
+
 
 })
