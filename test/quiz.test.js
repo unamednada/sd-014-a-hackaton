@@ -44,3 +44,5 @@ describe ('Testa se a função fetchQuiz', () => {
     expect(fetch).toHaveBeenCalledTimes(4);
   })
 });
+
+describe('Testa se ')
