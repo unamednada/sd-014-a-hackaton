@@ -117,7 +117,6 @@ describe('Testa se a função populateAnswers', () => {
   })
 
   it('acrescenta os objetos corretamente à mockDiv', () => {  
-
     expect(mockDiv).toEqual([]);
     expect(quiz.populateAnswers).not.toHaveBeenCalled();
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
@@ -157,5 +156,5 @@ describe('Testa se a função populateAnswers', () => {
 })
 
 describe('Testa se a função appendQuestions()', () => {
-  // testes para o forEach aqui
+  
 })

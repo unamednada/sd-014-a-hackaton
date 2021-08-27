@@ -1,10 +1,4 @@
-// Comentar para não dar erro no node
 
-// const questionContainer = document.querySelector('#question-container');
-// const filterBtn = document.querySelector('#filter-btn');
-// const randomBtn = document.querySelector('#random-btn');
-// const player = localStorage.getItem('player');
-  
 let correct = 0;
 let quizLength = 10;
 let progressValue = 1;
@@ -25,7 +19,6 @@ const getParams = () => {
 
 // Make the function fetch 
 
-// Comentar para não dar erro no browser
 const fetch = require('node-fetch');
 
 // Função que faz a requisição para a API 
@@ -162,34 +155,6 @@ const showPlayer = (name) => {
   document.querySelector('#player-name').innerText = name;
   localStorage.removeItem('player');
 }
-
-// Linhas comentadas para não dar erro no node
-
-// window.onload = async () => {
-
-//   showPlayer(player);
-
-//   filterBtn.addEventListener('click', async () => {
-//     questionContainer.innerHTML = '';
-//     await createQuiz();
-//     try {
-//       questionContainer.firstElementChild.classList.toggle('show');
-//       window.location.replace('#question-container');
-//       correct = 0;
-//     } catch (error) {
-//       console.log('Selecione algum parâmetro ou clique em Random!');
-//     }
-//   })
-
-//   randomBtn.addEventListener('click', async () => {
-//     questionContainer.innerHTML = '';
-//     await randomQuiz();
-//     questionContainer.firstElementChild.classList.toggle('show');
-//     window.location.replace('#question-container');
-//     correct = 0;
-//   })
-
-// }
 
 module.exports = {
   fetchQuiz,
