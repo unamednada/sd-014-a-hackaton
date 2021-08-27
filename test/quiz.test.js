@@ -30,23 +30,27 @@ describe ('Testa se a função fetchQuiz', () => {
 
   it('retorna um array ao ser chamada sem parâmetros', async () => {
     expect.assertions(3);
-    await expect(script.fetchQuiz()).resolves.toEqual(mockReturn);
+    await expect(quiz.fetchQuiz()).resolves.toEqual(mockReturn);
     expect(fetch).toHaveBeenCalled();
     expect(fetch).toHaveBeenCalledTimes(1);
   })
 
   it('retorna um array ao ser chamada com parâmetros válidos', async () => {
     expect.assertions(5);
-    await expect(script.fetchQuiz({ category: 'linux' })).resolves.toEqual(mockReturn);
-    await expect(script.fetchQuiz({ category: 'linux', difficulty: 'hard' })).resolves.toEqual(mockReturn);
-    await expect(script.fetchQuiz({ difficulty: 'easy', limit: '10' })).resolves.toEqual(mockReturn);
+    await expect(quiz.fetchQuiz({ category: 'linux' })).resolves.toEqual(mockReturn);
+    await expect(quiz.fetchQuiz({ category: 'linux', difficulty: 'hard' })).resolves.toEqual(mockReturn);
+    await expect(quiz.fetchQuiz({ difficulty: 'easy', limit: '10' })).resolves.toEqual(mockReturn);
     expect(fetch).toHaveBeenCalled();
     expect(fetch).toHaveBeenCalledTimes(4);
   })
 });
 
-describe('Testa se as funções contento HOFS', () => {
+describe('Testa se a função populateAnswers', () => {
 
-  jest.mock()
+  //mockar tudo o que depende do objeto document antes de testar
+
+  it('', () => {
+
+  })
 
 })
