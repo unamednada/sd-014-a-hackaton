@@ -188,8 +188,8 @@ window.onload = async () => {
 
 }
 
-// module.exports = {
-//   fetchQuiz,
-//   populateAnswers,
-//   appendQuestions
-// }
+module.exports = {
+  fetchQuiz,
+  populateAnswers,
+  appendQuestions
+}

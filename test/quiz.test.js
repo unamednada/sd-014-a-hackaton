@@ -49,6 +49,18 @@ describe('Testa se a função populateAnswers', () => {
 
   //mockar tudo o que depende do objeto document antes de testar
 
+  quiz.populateAnswers = jest.fn((array, div, key) => {
+    for (let i = 0; i < array.length; i += 1) {
+      const answer = array[i];
+      const currentAnswer = {
+        innerText: answer,
+        classList: ['answer']
+      }
+      if (Object.values(key)[i] === 'true') currentAnswer.classList.push('correct');
+      div.push(currentAnswer);
+    }
+  })
+
   it('', () => {
 
   })
