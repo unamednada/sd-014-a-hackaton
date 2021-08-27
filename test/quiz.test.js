@@ -135,7 +135,6 @@ describe('Testa se a função populateAnswers', () => {
     quiz.populateAnswers.mockReset();
 
     quiz.populateAnswers.mockImplementation((array, div, key) => {
-      // mockando o resultado da hof
       array.forEach((answer, index) => {
         const currentAnswer = {
           innerText: answer,
