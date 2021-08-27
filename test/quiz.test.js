@@ -86,7 +86,7 @@ describe('Testa se a função populateAnswers', () => {
   it('modifica a div ao ser chamada com parâmetros "mock"', () => {
     quiz.populateAnswers(mockArray, mockDiv, mockKey);
     expect(quiz.populateAnswers).toHaveBeenCalled();
-    expect(mockDiv).toEqual([]);
+    expect(mockDiv).not.toEqual([]);
   })
 
 })
