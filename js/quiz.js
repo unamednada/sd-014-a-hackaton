@@ -45,6 +45,16 @@ const fetchQuiz = async (params = {}) => {
 
 // Create createQuestionItem
 
+const populateAnswers = (answersArray, mainDiv, key) => {
+  answersArray.forEach((answer, index) => {
+    const currentAnswer = document.createElement('li');
+    currentAnswer.innerText = answer;
+    currentAnswer.classList.add('answer');
+    if (Object.values(key)[index] === 'true') currentAnswer.classList.add('correct');
+    mainDiv.appendChild(currentAnswer);
+  });
+}
+
 const createQuestionItem = ({ question, answers, correct_answers }) => {
   const questionDiv = document.createElement('div');
   // Somente aceita respostas válidas
@@ -56,13 +66,7 @@ const createQuestionItem = ({ question, answers, correct_answers }) => {
   questionElement.innerText = question;
   questionDiv.appendChild(questionElement);
   // Itera por todas as respostas válidas e verifica se é a correta para então acrescentar o elemeto à questionDiv
-  validAnswers.forEach((answer, index) => {
-    const currentAnswer = document.createElement('li');
-    currentAnswer.innerText = answer;
-    currentAnswer.classList.add('answer');
-    if (Object.values(correct_answers)[index] === 'true') currentAnswer.classList.add('correct');
-    questionDiv.appendChild(currentAnswer);
-  });
+  populateAnswers(validAnswers, questionDiv, correct_answers);
   questionDiv.appendChild(progressBar);
   questionDiv.className = "question-div";
   questionDiv.addEventListener('click', countAnswers);
@@ -113,7 +117,7 @@ const generateResult = (result) => {
   let gradeMessage = '';
   if (average < .6) gradeMessage = 'Que tal estudar um pouco mais?';
   else if (average < .8) gradeMessage = 'Seu resultado foi MAAAAAAAAAAAARAVILHOSO!';
-  else gradeMessage = 'Você é um gênio. Parabéns!';
+  else gradeMessage = 'Você é genial. Parabéns!';
   return [message, gradeMessage];
 }
 

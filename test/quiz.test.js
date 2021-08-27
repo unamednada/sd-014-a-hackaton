@@ -45,8 +45,8 @@ describe ('Testa se a função fetchQuiz', () => {
   })
 });
 
-// describe('Testa se as funções contento HOFS' () => {
+describe('Testa se as funções contento HOFS', () => {
 
-//   jest.mock()
+  jest.mock()
 
-// })
+})
